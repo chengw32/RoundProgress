@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="RoundProgress">
+
+        <attr name="ProgressColor" format="color"></attr>
+        <attr name="ProgressBackgroundColor" format="color"></attr>
+        <attr name="ProgressTextColor" format="color"></attr>
+        <attr name="ProgressWidth" format="dimension"></attr>
+        <attr name="ProgressTextSize" format="dimension"></attr>
+        <attr name="ProgressMaxValue" format="integer"></attr>
+
+
+    </declare-styleable>
+</resources>
