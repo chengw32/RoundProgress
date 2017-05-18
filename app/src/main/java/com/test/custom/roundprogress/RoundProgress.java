@@ -53,7 +53,7 @@ public class RoundProgress extends View {
         int centerPoint = getWidth() / 2 ;
         float radius = centerPoint - progressWidth / 2 ;
         mPaint = new Paint();
-        mPaint.setColor(Color.RED);
+        mPaint.setColor(Color.BLUE);
         mPaint.setStyle(Paint.Style.STROKE);
         mPaint.setStrokeWidth(progressWidth);
         mPaint.setAntiAlias(true);
@@ -61,10 +61,10 @@ public class RoundProgress extends View {
 
         //中间的进度提示文字
         mPaint.setColor(Color.GRAY);
-        mPaint.setTextAlign(Paint.Align.CENTER);
+        mPaint.setTextAlign(Paint.Align.CENTER);//设置文本相对 画字体时 的起始坐标 的位置 center 以起始坐标为中心
         mPaint.setStrokeWidth(0);
         mPaint.setTextSize(textSize);
-        mPaint.setTypeface(Typeface.DEFAULT_BOLD);
+        mPaint.setTypeface(Typeface.DEFAULT);//设置字体呀样式
         mPaint.setStrokeCap(Paint.Cap.ROUND);
 
         linePaint = new Paint();
@@ -78,7 +78,7 @@ public class RoundProgress extends View {
         //画圆弧
 //        RectF rf = new RectF(10, 10,50,50 );
         RectF rf = new RectF(centerPoint - radius, centerPoint - radius,centerPoint + radius,centerPoint + radius );//外切圆的矩形区域
-        mPaint.setColor(Color.BLUE);
+        mPaint.setColor(Color.GREEN);
         mPaint.setStyle(Paint.Style.STROKE);
         mPaint.setStrokeCap(Paint.Cap.BUTT);
         mPaint.setStrokeWidth(progressWidth);
@@ -92,6 +92,18 @@ public class RoundProgress extends View {
         Log.e("angle","-----------"+angle);
         Log.e("currentProgress","-----------"+currentProgress);
         postInvalidate();
+    }
+
+    public void setProgressBgColor (int color){
+        this.progressBgColor = color;
+    }
+
+    public void setProgressColor(int color){
+        this.progressColor = color;
+    }
+
+    public int getProgressBgColor(){
+        return progressBgColor;
     }
 
 }

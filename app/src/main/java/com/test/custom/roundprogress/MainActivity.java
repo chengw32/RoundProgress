@@ -1,5 +1,6 @@
 package com.test.custom.roundprogress;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -28,6 +29,14 @@ public class MainActivity extends AppCompatActivity {
                                 e.printStackTrace();
                             }
                             if (progress >= 100){
+                                int progressBgColor = viewById.getProgressBgColor();
+                                if (Color.BLUE == progressBgColor){
+                                    viewById.setProgressBgColor(Color.GREEN);
+                                    viewById.setProgressColor(Color.BLUE);
+                                }else {
+                                    viewById.setProgressBgColor(Color.BLUE);
+                                    viewById.setProgressColor(Color.GREEN);
+                                }
                                 progress = 0 ;
                             }
                         }
